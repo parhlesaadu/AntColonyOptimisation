@@ -20,7 +20,7 @@ Args:\
         max_iterations (int): Maximum number of iterations\
         dimension (int): Dimensionality of the solution space\
         eta (float): Small constant for numerical stability\
-        xi (float): Perturbation scaling factor for Algorithm 4\
+        xi (float): Perturbation scaling factor for Algorithm 4
 
 Returns:\
         archive (list): Archive of solutions\
