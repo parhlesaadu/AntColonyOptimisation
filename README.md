@@ -24,4 +24,4 @@ Args:\
 
 Returns:\
         archive (list): Archive of solutions.
-        fitness_values (list): Fitness values of the solutions.
+        fitness_values (list): Fitness values of the solutions
