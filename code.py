@@ -112,16 +112,7 @@ def algorithm6(NP, G, delta, termination_criterion, eta, xi):
         NS = np.random.choice(G)
         niches = algorithm1(archive, NS)
 
-        new_solutions = algorithm4(
-            niches,
-            fitness_archive,
-            FSmax,
-            FSmin,
-            eta,
-            archive,
-            xi,
-            NS,
-        )
+        new_solutions = algorithm4(niches, fitness_archive, FSmax, FSmin, eta, archive, xi, NS)
 
         for c_k in new_solutions:
             for x in c_k:  # Iterate over each scalar element in c_k
