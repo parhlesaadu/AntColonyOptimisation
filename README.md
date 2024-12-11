@@ -14,14 +14,14 @@ Returns:\
 **Algorithm 7: Local Search-Based AMS-ACO (LAMS-ACO)**
 
 Args:\
-        NP (int): Ant colony size (number of solutions).
-        G (list): Niching size set.
-        local_std (float): Standard deviation for local search.
-        max_iterations (int): Maximum number of iterations.
-        dimension (int): Dimensionality of the solution space.
-        eta (float): Small constant for numerical stability.
-        xi (float): Perturbation scaling factor for Algorithm 4.
+        NP (int): Ant colony size (number of solutions)\
+        G (list): Niching size set\
+        local_std (float): Standard deviation for local search\
+        max_iterations (int): Maximum number of iterations\
+        dimension (int): Dimensionality of the solution space\
+        eta (float): Small constant for numerical stability\
+        xi (float): Perturbation scaling factor for Algorithm 4\
 
 Returns:\
-        archive (list): Archive of solutions.
+        archive (list): Archive of solutions\
         fitness_values (list): Fitness values of the solutions
