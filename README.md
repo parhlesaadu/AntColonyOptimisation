@@ -1,4 +1,4 @@
-**Algorithm 5:  Adaptive Local Search**\
+**Algorithm 5:  Adaptive Local Search**
 
 Args:
         seeds (list): Current seed solutions\
@@ -11,7 +11,7 @@ Returns:
         updated_seeds (list): Updated seed solutions\
         updated_fitness_values (list): Updated fitness values\
 
-**Algorithm 7: Local Search-Based AMS-ACO (LAMS-ACO)**\
+**Algorithm 7: Local Search-Based AMS-ACO (LAMS-ACO)**
 
 Args:
         NP (int): Ant colony size (number of solutions).
