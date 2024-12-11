@@ -62,25 +62,7 @@ def algorithm4(niches, fitness, FSmax, FSmin, eta, archive, xi, NP):
 
 # Algorithm 5: Adaptive Local Search
 def algorithm5(seeds, fitness_values, local_std, num_samples, eta=0.01):
-    """
-    Adaptive Local Search
-
-    Args:
-        seeds (list): Current seed solutions.
-        fitness_values (list): Fitness values of seed solutions.
-        local_std (float): Standard deviation for Gaussian perturbation.
-        num_samples (int): Number of sampled individuals for local search.
-        eta (float): Small constant for numerical stability.
-
-    Returns:
-        updated_seeds (list): Updated seed solutions.
-        updated_fitness_values (list): Updated fitness values.
-    """
     def evaluate_fitness(solution):
-        """
-        Compute the fitness for each dimension in the solution.
-        Raise an error if any dimension is out of the allowed range
-        """
         return sum(np.sin(5 * np.pi * x) ** 6 if 0 <= x <= 1 else -np.inf for x in solution)
 
     num_seeds = len(seeds)
@@ -157,27 +139,7 @@ def euclidean_distance(a, b):
     return np.linalg.norm(a - b)
     
 def algorithm7(NP, G, local_std, max_iterations, dimension, eta=0.01, xi=0.1):
-    """
-    Local Search-Based AMS-ACO (LAMS-ACO)
-
-    Args:
-        NP (int): Ant colony size (number of solutions).
-        G (list): Niching size set.
-        local_std (float): Standard deviation for local search.
-        max_iterations (int): Maximum number of iterations.
-        dimension (int): Dimensionality of the solution space.
-        eta (float): Small constant for numerical stability.
-        xi (float): Perturbation scaling factor for Algorithm 4.
-
-    Returns:
-        archive (list): Archive of solutions.
-        fitness_values (list): Fitness values of the solutions.
-    """
     def evaluate_fitness(solution):
-        """
-        Compute the fitness for each dimension in the solution.
-        Raise an error if any dimension is out of the allowed range
-        """
         return sum(np.sin(5 * np.pi * x) ** 6 if 0 <= x <= 1 else -np.inf for x in solution)
 
     # Step 1: Initialize NP solutions
@@ -221,6 +183,18 @@ def algorithm7(NP, G, local_std, max_iterations, dimension, eta=0.01, xi=0.1):
 
     return archive, fitness_values
 
+# Parameters for algorithm 6
+NP = 10
+G = [2, 3, 4]
+delta = 1.0
+termination_criterion = 50
+eta = 1.0
+xi = 0.5
+final_archive, final_fitness = algorithm6(NP, G, delta, termination_criterion, eta, xi)
+print("Final Archive (Crwod-based clustering):")
+for sol, fit in zip(final_archive, final_fitness):
+        print(f"Solution: {sol}, Fitness: {fit}")
+
 # Parameters for Algorithm 7
 NP = 10  # Ant colony size
 G = [2, 3, 4]  # Niching size set
@@ -230,19 +204,6 @@ dimension = 5  # Dimensionality of solutions
 eta = 0.01  # Small constant for numerical stability
 xi = 0.5  # Perturbation scaling factor
 final_archive, final_fitness = algorithm7(NP, G, local_std, termination_criterion, dimension, eta, xi)
-print("Final Archive:")
+print("Final Archive (Species-based clustering):")
 for sol, fit in zip(final_archive, final_fitness):
     print(f"Solution: {sol}, Fitness: {fit:.4f}")
-
-# Parameters for algorithm 6
-    NP = 10
-    G = [2, 3, 4]
-    delta = 1.0
-    termination_criterion = 50
-    eta = 1.0
-    xi = 0.5
-
-    final_archive, final_fitness = algorithm6(NP, G, delta, termination_criterion, eta, xi)
-    print("Final Archive:")
-    for sol, fit in zip(final_archive, final_fitness):
-        print(f"Solution: {sol}, Fitness: {fit}")
