@@ -3,7 +3,6 @@ import numpy as np
 def fitnessFunction(x):
     return np.sin(5 * np.pi * x) ** 6
 
-
 # Algorithm 1: Clustering for Crowding
 def algorithm1(archive, cluster_size):
     archive_array = np.array(archive)
