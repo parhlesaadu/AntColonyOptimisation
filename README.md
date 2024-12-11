@@ -5,11 +5,11 @@ Args:\
         fitness_values (list): Fitness values of seed solutions\
         local_std (float): Standard deviation for Gaussian perturbation\
         num_samples (int): Number of sampled individuals for local search\
-        eta (float): Small constant for numerical stability\
+        eta (float): Small constant for numerical stability
 
 Returns:\
         updated_seeds (list): Updated seed solutions\
-        updated_fitness_values (list): Updated fitness values\
+        updated_fitness_values (list): Updated fitness values
 
 **Algorithm 7: Local Search-Based AMS-ACO (LAMS-ACO)**
 
