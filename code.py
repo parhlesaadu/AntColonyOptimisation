@@ -1,6 +1,6 @@
 import numpy as np
 
-def fitnessFunction(x):
+def fitness_function(x):
     return np.sin(5 * np.pi * x) ** 6
 
 # Algorithm 1: Clustering for Crowding
@@ -101,7 +101,7 @@ def algorithm6(NP, G, delta, termination_criterion, eta, xi):
     fitness_archive = []
     for sol in archive:
         for x in sol:
-            fitness_archive.append(fitnessFunction(x))  # Adjusted for individual scalar values
+            fitness_archive.append(fitness_function(x))  # Adjusted for individual scalar values
     fitness_archive = np.array(fitness_archive)
 
     iteration = 0
@@ -116,9 +116,9 @@ def algorithm6(NP, G, delta, termination_criterion, eta, xi):
         for c_k in new_solutions:
             for x in c_k:  # Iterate over each scalar element in c_k
                 nearest_idx = np.argmin([euclidean_distance(x, sol) for sol in archive])
-                if fitnessFunction(x) > fitness_archive[nearest_idx]:
+                if fitness_function(x) > fitness_archive[nearest_idx]:
                     archive[nearest_idx] = x
-                    fitness_archive[nearest_idx] = fitnessFunction(x)
+                    fitness_archive[nearest_idx] = fitness_function(x)
 
         archive, fitness_archive = algorithm5(archive, fitness_archive, delta, num_samples=1)
         iteration += 1
