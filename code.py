@@ -3,6 +3,9 @@ import numpy as np
 def fitness_function(x):
     return np.sin(5 * np.pi * x) ** 6
 
+def euclidean_distance(a, b):
+    return np.linalg.norm(a - b)
+
 # Algorithm 1: Clustering for Crowding
 def algorithm1(archive, cluster_size):
     archive_array = np.array(archive)
@@ -125,9 +128,6 @@ def algorithm6(NP, G, delta, termination_criterion, eta, xi):
     
     return archive, fitness_archive
 
-def euclidean_distance(a, b):
-    return np.linalg.norm(a - b)
-
 # Algorithm 7: LAMS-ACO
 def algorithm7(NP, G, local_std, max_iterations, dimension, eta=0.01, xi=0.1):
     def evaluate_fitness(solution):
@@ -182,7 +182,7 @@ termination_criterion = 50
 eta = 1.0
 xi = 0.5
 final_archive, final_fitness = algorithm6(NP, G, delta, termination_criterion, eta, xi)
-print("Final Archive (Crwod-based clustering):")
+print("Final Archive (Crowd-based clustering):")
 for sol, fit in zip(final_archive, final_fitness):
         print(f"Solution: {sol}, Fitness: {fit}")
 
