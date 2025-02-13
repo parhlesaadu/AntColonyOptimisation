@@ -1,5 +1,5 @@
+```
 **Algorithm 5:  Adaptive Local Search**
-
 Args:\
         seeds (list): Current seed solutions\
         fitness_values (list): Fitness values of seed solutions\
@@ -10,7 +10,8 @@ Args:\
 Returns:\
         updated_seeds (list): Updated seed solutions\
         updated_fitness_values (list): Updated fitness values
-
+```
+```
 **Algorithm 7: Local Search-Based AMS-ACO (LAMS-ACO)**
 
 Args:\
@@ -25,3 +26,4 @@ Args:\
 Returns:\
         archive (list): Archive of solutions\
         fitness_values (list): Fitness values of the solutions
+```
